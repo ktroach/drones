@@ -1,0 +1,12 @@
+[
+    {"name": "drone-001", "maxWeight": 40},
+    {"name": "drone-002", "maxWeight": 90},
+    {"name": "drone-003", "maxWeight": 20},
+    {"name": "drone-004", "maxWeight": 55},
+    {"name": "drone-005", "maxWeight": 65},
+    {"name": "drone-006", "maxWeight": 55},
+    {"name": "drone-007", "maxWeight": 65},
+    {"name": "drone-008", "maxWeight": 60},
+    {"name": "drone-009", "maxWeight": 70},
+    {"name": "drone-010", "maxWeight": 85}
+]

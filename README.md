@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Drone Delivery Service
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###Quick Start
 
-## Available Scripts
+To start script:
+```
+$ npm start
+```
 
-In the project directory, you can run:
+To run tests:
+```
+$ npm test
+```
 
-### `npm start`
+###Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A squad of drones have been tasked with delivering packages for a major online reseller in a world where time and distance do not matter.  Each drone can carry a specific weight, and can make multiple deliveries before returning to home base to pick up additional loads; however the goal is to make the fewest number of trips as each time the drone returns to home base it is extremely costly to refuel and reload the drone.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The purpose of the written software will be to accept input which will include the name of each drone and the maximum weight it can carry, along with a series of locations and the total weight needed to be delivered to that specific location.  The software should highlight the most efficient deliveries for each drone to make on each trip.
 
-### `npm test`
+Assume that time and distance to each drop off location do not matter, and that size of each package is also irrelevant.  It is also assumed that the cost to refuel and restock each drone is a constant and does not vary between drones.  The maximum number of drones in a squad is 100, and there is no maximum number of deliveries which are required.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###Given Input
+```
+Line 1: [Drone #1 Name], [#1 Maximum Weight], [Drone #2 Name], [#2 Maximum Weight], etc.
+Line 2: [Location #1 Name], [Location #1 Package Weight]
+Line 3: [Location #2 Name], [Location #2 Package Weight]
+Line 4: [Location #3 Name], [Location #3 Package Weight]
+Etc.
+```
+###Expected Output
+```
+[Drone #1 Name]
+Trip #1
+[Location #2 Name], [Location #3 Name]
+Trip #2
+[Location #1 Name]
 
-### `npm run build`
+[Drone #2 Name]
+Trip #1
+[Location #4 Name], [Location #7 Name]
+Trip #2
+[Location #5 Name], [Location #6 Name]
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Additional Guidance
+- All instructions are followed 
+- Correct input/output  
+- Good documentation 
+- Separation of concerns 
+- Input validation 
+- Reasonably efficient 
+- Good comments about why 
+- At least a few good unit tests 

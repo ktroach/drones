@@ -4,7 +4,7 @@ export const getCount = (collection) => {
     if (collection && collection.length > 0 ) {
         for (let i in collection) {
             const items = collection[i];
-            count = items?.length;
+            count += items?.length;
         }
     }
     return count;

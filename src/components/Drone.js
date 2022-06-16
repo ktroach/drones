@@ -55,10 +55,10 @@ export const Drone = (props) => {
                                                     </TableRow>
                                                 </TableHead>
                                                 <TableBody>
-                                                    {tripRow.map((location) => (
-                                                        <TableRow key={location}>
-                                                            <TableCell style={{ fontSize: 12 }}>{location.name}</TableCell>
-                                                            <TableCell style={{ fontSize: 12 }}>{location.weight}</TableCell>
+                                                    {tripRow.map((trip) => (
+                                                        <TableRow key={trip}>
+                                                            <TableCell style={{ fontSize: 12 }}>{trip.location.name}</TableCell>
+                                                            <TableCell style={{ fontSize: 12 }}>{trip.location.weight}</TableCell>
                                                         </TableRow>
                                                     ))}
                                                 </TableBody>

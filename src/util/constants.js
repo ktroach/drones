@@ -1,2 +1,2 @@
 export const DELIVERY_SERVICE_TITLE = 'Drone Delivery Service';
-export const SELECT_ORG_TITLE = 'Select Org';
+export const HOME_TITLE = 'Welcome to the Drone Delivery Service';

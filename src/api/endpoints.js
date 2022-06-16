@@ -1,4 +1,4 @@
-import {getSqaudDeliveries} from './backend';
+import {getSqaudDeliveries} from './Backend';
 
 export const getAllDroneSquadDeliveries = async (tripLimit) => {
     return await getSqaudDeliveries(tripLimit);

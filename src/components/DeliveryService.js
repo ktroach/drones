@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Drones } from './Drones';
-import { getAllDroneSquadDeliveries } from '../api/endpoints';
+import { getAllDroneSquadDeliveries } from '../api/Endpoints';
 import {DELIVERY_SERVICE_TITLE} from '../util/constants';
 
 export const DeliveryService = () => {

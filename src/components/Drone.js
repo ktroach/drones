@@ -47,18 +47,18 @@ export const Drone = (props) => {
                                             <TableCell style={{ fontSize: 12, fontWeight: 'bold' }}>Trip {index + 1}</TableCell>
                                         </TableRow>
                                         <TableRow>
-                                            <Table size="small" aria-label="deliveries" style={{ backgroundColor: '#f7f7f7' }}>
+                                            <Table size="small" aria-label="trips" style={{ backgroundColor: '#f7f7f7' }}>
                                                 <TableHead>
                                                     <TableRow>
-                                                        <TableCell style={{ fontSize: 12, fontWeight: 'bold' }}>Location</TableCell>
-                                                        <TableCell style={{ fontSize: 12, fontWeight: 'bold' }}>Weight</TableCell>
+                                                        <TableCell style={{ fontSize: 12, fontWeight: 'bold', width: '50%' }}>Location</TableCell>
+                                                        <TableCell style={{ fontSize: 12, fontWeight: 'bold', width: '50%' }}>Weight</TableCell>
                                                     </TableRow>
                                                 </TableHead>
                                                 <TableBody>
                                                     {tripRow.map((trip) => (
                                                         <TableRow key={trip}>
-                                                            <TableCell style={{ fontSize: 12 }}>{trip.location.name}</TableCell>
-                                                            <TableCell style={{ fontSize: 12 }}>{trip.location.weight}</TableCell>
+                                                            <TableCell style={{ fontSize: 12, width: '50%' }}>{trip.location.name}</TableCell>
+                                                            <TableCell style={{ fontSize: 12, width: '50%' }}>{trip.location.weight}</TableCell>
                                                         </TableRow>
                                                     ))}
                                                 </TableBody>

@@ -1,9 +1,5 @@
-// import drones from './drones.json';
-// import locations from './locations.json';
 import {getSqaudDeliveries} from './backend';
 
-export const getAllDroneDeliveries = async () => {
-    const response = await getSqaudDeliveries(2);
-    // const response = await getSqaudDeliveries(drones, locations, 2);
-    return response;
+export const getAllDroneSquadDeliveries = async (tripLimit) => {
+    return await getSqaudDeliveries(tripLimit);
 };

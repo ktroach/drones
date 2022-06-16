@@ -23,10 +23,10 @@ export const getSqaudDeliveries = async (tripLimit) => {
         }));
     });
 
-    return await getDroneSqaudDeliveries(drones, locations, tripLimit); 
+    return await computeDroneSqaudDeliveries(drones, locations, tripLimit); 
 };
 
-export const getDroneSqaudDeliveries = async (drones, locations, tripLimit) => {
+export const computeDroneSqaudDeliveries = async (drones, locations, tripLimit) => {
     let deliveries = [];
     for (let d in drones) {
         let drone = drones[d];

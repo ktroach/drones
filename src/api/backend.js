@@ -1,6 +1,32 @@
 import _ from 'lodash';
+import {dataFile} from '../data/001';
 
-export const getSqaudDeliveries = async (drones, locations, tripLimit) => {
+export const getSqaudDeliveries = async (tripLimit) => {
+    let drones = dataFile[0].split(',').
+    reduce((prev, curr, index) => {
+      return prev.concat(
+        !(index%2) ? { name: curr } :
+        ((drone) => {
+          drone.maxWeight = curr * 1;
+          return drone;
+        })(prev.pop())
+      );
+    }, []);
+
+  let locations = dataFile.slice(1).
+    filter(item => item).
+    map(item => {
+      return item.split(',').
+        reduce((name, weight) => ({
+          name: name,
+          weight: weight*1
+        }));
+    });
+
+    return await getDroneSqaudDeliveries(drones, locations, tripLimit); 
+};
+
+export const getDroneSqaudDeliveries = async (drones, locations, tripLimit) => {
     let deliveries = [];
     for (let d in drones) {
         let drone = drones[d];

@@ -17,9 +17,10 @@ export const Drone = (props) => {
     const trips = row.trips ? row.trips : undefined;
     const [open, setOpen] = React.useState(true);
     const count = getCount(trips);
-    const tableHeaderStyle = { fontSize: 12, fontWeight: 'bold' };
-    const cellHeaderStyle = { fontSize: 12, fontWeight: 'bold', width: '50%' };
-    const cellDataStyle = { fontSize: 12, width: '50%' };
+    const tableFontSize = 12;
+    const tableHeaderStyle = { fontSize: tableFontSize, fontWeight: 'bold' };
+    const cellHeaderStyle = { fontSize: tableFontSize, fontWeight: 'bold', width: '50%' };
+    const cellDataStyle = { fontSize: tableFontSize, width: '50%' };
     const deliveriesTableColor = { backgroundColor: '#c4c4c4' };
     const tripsTableColor = { backgroundColor: '#f7f7f7' };
     return (

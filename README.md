@@ -1,15 +1,19 @@
 # Drone Delivery Service
 
-Prerequisites:
+### Prerequisites:
+
 ```
 Node 
 https://nodejs.org/en/download/
 ```
 
-Installation:
+### Installation:
+
 ```
 $ npm install
 ```
+
+### Running the application
 
 To start script:
 ```
@@ -21,6 +25,8 @@ Abbreviated Start Script:
 $ npm run s
 ```
 
+### Running Unit Tests:
+
 To run tests:
 ```
 $ npm test
@@ -30,6 +36,8 @@ To run tests with coverage:
 ```
 $ npm run t
 ```
+
+### Building the application for deployment:
 
 To build:
 ```
@@ -41,12 +49,21 @@ Abbreviated Build Script:
 $ npm run b
 ```
 
-### Usage
-Navigate to the Drone Delivery Service page by clicking on the "Deliveries" link on the to Navbar.
+### Deployment
+The application has been deployed to Heroku for review using the Heroku CI process intergration with Github. The application can be found at: https://welltrax-drones.herokuapp.com/
 
 ### Design
+Architectually, this application was designed to use the latest React features, such as: useState, useEffect, reduce, map, and more. Modern conventions were used in the code for this project: async/await.
 
-There are several layers of abstraction and seperation of concerns implmemented in the application design.  React functional components are used throughout the project and logically seperated to increase maintanability. 
+Drone Delivery Service is a React application. The project is organized by seperating the concerns of the visual components from the backend api components. The backend is a virtual backend that is within the project that simulates remote calls to an api. The backend layer consists of the following components: Backend.js, Endpoints.js, and Validator.js. The purpose of the backend structure is to simulate a remote api thats intent is to process the drone delivery algorithm. The Endpoints component is used to simulate the remote endpoint, abstracting away the acutal computation from the endpoint interface. The Backend component is responsible for the acutal computation of drone delivery algorithm. The Backend component is also responsible for ingesting the data from the data file that contains the drones and the locations data.  The data is abstracted from the backend component in the 001 data file within the data folder. The Validator is used to validate the inputs prior to computing the drone delivery data.
+
+The visual components consist of the following React functions: DeliveryService.js, Drones.js, Drone.js, and the Header.js. DeliveryService is the top-level component in the visual structure. This higher order component performs the call to the virtual api to fetch the drone delivery data. There is a seperation of concern, that seperates the UI from the API. Rendering of the data is was accomplished using MUI - Material UI library. MUI Table was used to render the drone deliveries in expandable and collapsable rows. The data is structured so that the deliveries can be visualized in an expandable table. Nested MUI Tables are used to achieve this UX design.
+
+Styling was implemented using CSS. Styling concerns were seperated in CSS files for the UI components. One component: Drone.js, demonstrates inline styling approach. 
+
+
+Unit Tests were implemented using Jest, React-Testing-Library, and Jest-Dom.  Also, the @babel/preset-env module was used to allow async/await calls in the unit tests.
+
 
 ### Problem Description
 
@@ -92,4 +109,4 @@ Trip #2
 
 ### Solution
 
-The main algorithm for processing the drone deliveries is found in the Backend module and it is called computeDroneSqaudDeliveries. This algorithm takes the drones and the locations as inputs, as well as the trip limit. The computation works such that the algorithm iterates over the given drones and locations from the input file. While iterating over the drones, it checks to see if the drone has already delivered to the given location. If it has not already delivered to the given location, it then checks to see if the drone still has capacity to deliver to that given location. If capacity is available, the drone adds that location and the location weight to the current trips that are scheduled. When the weight capacity has been reached for a given drone, the iterator tries to restock the drone from another trip, unless the number of trips has already exceeded the trip limit. This is to conserve power and limit trips that require more recharging/refueling.  The Validator is responsible for validating all inputs prior to computation. 
+The main algorithm for processing the drone deliveries is found in the Backend module and it is called computeDroneSqaudDeliveries. This algorithm takes the drones and the locations as inputs, as well as the trip limit. The Validator is responsible for validating all inputs prior to computation. The computation works such that the algorithm iterates over the given drones and locations from the input file. While iterating over the drones, it checks to see if the drone has already delivered to the given location. If it has not already delivered to the given location, it then checks to see if the drone still has capacity to deliver to that given location. If capacity is available, the drone adds that location and the location weight to the current trips that are scheduled. When the weight capacity has been reached for a given drone, the iterator tries to restock the drone from another trip, unless the number of trips has already exceeded the trip limit. This is to conserve power and limit trips that require more recharging/refueling. The algorithm takes all of the drones and applies the trips made by the drone into a resultset. The resultsets are normalized and combined into a final result that is returned by the compute function. 

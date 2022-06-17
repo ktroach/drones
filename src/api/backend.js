@@ -1,7 +1,6 @@
 import _ from 'lodash';
-import { toast } from 'react-toastify';
 import {dataFile} from '../data/001';
-import {SQUAD_SIZE_LIMIT_EXCEEDED} from '../util/constants';
+import { validateInputs } from './Validator';
 
 export const getSqaudDeliveries = async (tripLimit) => {
     let drones = dataFile[0].split(',').
@@ -30,8 +29,7 @@ export const getSqaudDeliveries = async (tripLimit) => {
 
 export const computeDroneSqaudDeliveries = async (drones, locations, tripLimit) => {
     let deliveries = [];
-    // the number of drones in the squad cannot exceed 100 
-    if (!validateSquadSize(drones)) {
+    if (!validateInputs(drones, locations, tripLimit)) {
       return [];
     }
     for (let d in drones) {
@@ -84,13 +82,4 @@ const hasCapacity = (accumlatedWeight, maxWeight, locationWeight) => {
         return true;
     }
     return false;
-};
-
-const validateSquadSize = (drones) => {
-  if (drones.length > 100) {
-    toast.error(SQUAD_SIZE_LIMIT_EXCEEDED);
-    console.warn(SQUAD_SIZE_LIMIT_EXCEEDED);
-    return false;
-  }
-  return true;
 };

@@ -3,6 +3,7 @@
 Prerequisites:
 ```
 Node 
+https://nodejs.org/en/download/
 ```
 
 Installation:
@@ -15,12 +16,39 @@ To start script:
 $ npm start
 ```
 
+Abbreviated Start Script:
+```
+$ npm run s
+```
+
 To run tests:
 ```
 $ npm test
 ```
 
-### Description
+To run tests with coverage:
+```
+$ npm run t
+```
+
+To build:
+```
+$ npm run build 
+```
+
+Abbreviated Build Script:
+```
+$ npm run b
+```
+
+### Usage
+Navigate to the Drone Delivery Service page by clicking on the "Deliveries" link on the to Navbar.
+
+### Design
+
+There are several layers of abstraction and seperation of concerns implmemented in the application design.  React functional components are used throughout the project and logically seperated to increase maintanability. 
+
+### Problem Description
 
 A squad of drones have been tasked with delivering packages for a major online reseller in a world where time and distance do not matter.  Each drone can carry a specific weight, and can make multiple deliveries before returning to home base to pick up additional loads; however the goal is to make the fewest number of trips as each time the drone returns to home base it is extremely costly to refuel and reload the drone.
 
@@ -60,3 +88,8 @@ Trip #2
 - Reasonably efficient 
 - Good comments about why 
 - At least a few good unit tests 
+
+
+### Solution
+
+The main algorithm for processing the drone deliveries is found in the Backend module and it is called computeDroneSqaudDeliveries. This algorithm takes the drones and the locations as inputs, as well as the trip limit. The computation works such that the algorithm iterates over the given drones and locations from the input file. While iterating over the drones, it checks to see if the drone has already delivered to the given location. If it has not already delivered to the given location, it then checks to see if the drone still has capacity to deliver to that given location. If capacity is available, the drone adds that location and the location weight to the current trips that are scheduled. When the weight capacity has been reached for a given drone, the iterator tries to restock the drone from another trip, unless the number of trips has already exceeded the trip limit. This is to conserve power and limit trips that require more recharging/refueling.  The Validator is responsible for validating all inputs prior to computation. 

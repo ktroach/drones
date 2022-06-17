@@ -2,7 +2,7 @@
   "name": "welltrax-test",
   "engines": {
     "node": ">=4.1.1"
-  },  
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,8 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "latest",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
     "axios": "^0.27.2",
     "lodash": "^4.17.21",
     "react": "latest",
@@ -21,7 +23,7 @@
   "scripts": {
     "b": "npm run build",
     "s": "npm run start",
-    "t": "npm run test",
+    "t": "npm test -- --coverage",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

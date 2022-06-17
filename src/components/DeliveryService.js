@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Drones } from './Drones';
 import { getAllDroneSquadDeliveries } from '../api/Endpoints';
-import {DELIVERY_SERVICE_TITLE} from '../util/constants';
+import {DELIVERY_SERVICE_TITLE, DRONE_TRIP_LIMIT} from '../util/constants';
 
 export const DeliveryService = () => {
   const [deliveries, setDeliveries] = useState([]);
@@ -12,7 +12,7 @@ export const DeliveryService = () => {
   useEffect(() => {
     const fetchDeliveries = async () => {
       try {
-        const droneDeliveries = await getAllDroneSquadDeliveries(2);
+        const droneDeliveries = await getAllDroneSquadDeliveries(DRONE_TRIP_LIMIT);
         setDeliveries(droneDeliveries);
       } catch (err) {
         setDeliveries(null);

@@ -6,9 +6,9 @@ import './Header.css';
 export class Header extends React.Component {
   render() {
     return (
-      <header>
-        <MaterialLink class="title" component={RouterLink} to='/'>Home</MaterialLink>
-        <MaterialLink class="title" component={RouterLink} to='/deliveries'>Deliveries</MaterialLink>
+      <header className="header">
+        <MaterialLink className="title" component={RouterLink} to='/'>Home</MaterialLink>
+        <MaterialLink className="title" component={RouterLink} to='/deliveries'>Deliveries</MaterialLink>
       </header>
     );
   }

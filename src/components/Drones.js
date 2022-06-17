@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {Drone} from './Drone';
+import '../styles/Drones.css';
 
 export const Drones = (props) => {
     const rows = props.data;
@@ -15,11 +16,11 @@ export const Drones = (props) => {
             <Table aria-label="collapsible table">
                 <TableHead>
                     <TableRow>
-                        <TableCell style={{ fontWeight: 'bold' }}>Drone</TableCell>
-                        <TableCell style={{ fontWeight: 'bold' }} align="right">Max Weight</TableCell>
-                        <TableCell style={{ fontWeight: 'bold' }} align="right">Trips</TableCell>
-                        <TableCell style={{ fontWeight: 'bold' }} align="right">Deliveries</TableCell>
-                        <TableCell />
+                        <TableCell className="drones-table-cell">Drone</TableCell>
+                        <TableCell className="drones-table-cell" align="right">Max Weight</TableCell>
+                        <TableCell className="drones-table-cell" align="right">Trips</TableCell>
+                        <TableCell className="drones-table-cell" align="right">Deliveries</TableCell>
+                        <TableCell className="drones-table-cell" />
                     </TableRow>
                 </TableHead>
                 <TableBody>

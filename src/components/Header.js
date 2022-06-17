@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import MaterialLink from '@mui/material/Link';
-import './Header.css';
+import '../styles/Header.css';
 
 export class Header extends React.Component {
   render() {

@@ -1,0 +1,5 @@
+ .tableHeaderStyle { font-size: 12; font-weight: bold };
+ .cellHeaderStyle { font-size: 12; font-weight: bold; width: 50% };
+ .cellDataStyle { font-size: 11; width: 50% };
+ .deliveriesTableColor { background-color: #c4c4c4 };
+ .tripsTableColor { background-color: #f7f7f7 };

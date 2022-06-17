@@ -2,6 +2,7 @@ import _ from 'lodash';
 import {dataFile} from '../data/001';
 import { validateInputs } from './Validator';
 
+// Read from the data file to get the drones and locations data.
 export const getSqaudDeliveries = async (tripLimit) => {
     let drones = dataFile[0].split(',').
     reduce((prev, curr, index) => {
@@ -27,6 +28,7 @@ export const getSqaudDeliveries = async (tripLimit) => {
     return await computeDroneSqaudDeliveries(drones, locations, tripLimit); 
 };
 
+// Computes the drone deliveries based on the given data from the data file.
 export const computeDroneSqaudDeliveries = async (drones, locations, tripLimit) => {
     let deliveries = [];
     if (!validateInputs(drones, locations, tripLimit)) {
@@ -77,6 +79,7 @@ export const computeDroneSqaudDeliveries = async (drones, locations, tripLimit) 
     return deliveries;
 };
 
+// Checks the current capacity of the drone to see if it can hold more weight.
 export const hasCapacity = (accumlatedWeight, maxWeight, locationWeight) => {
     const combinedWeight = accumlatedWeight + locationWeight; 
     if (combinedWeight < maxWeight) {

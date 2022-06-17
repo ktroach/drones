@@ -17,6 +17,11 @@ export const Drone = (props) => {
     const trips = row.trips ? row.trips : undefined;
     const [open, setOpen] = React.useState(true);
     const count = getCount(trips);
+    const tableHeaderStyle = { fontSize: 12, fontWeight: 'bold' };
+    const cellHeaderStyle = { fontSize: 12, fontWeight: 'bold', width: '50%' };
+    const cellDataStyle = { fontSize: 12, width: '50%' };
+    const deliveriesTableColor = { backgroundColor: '#c4c4c4' };
+    const tripsTableColor = { backgroundColor: '#f7f7f7' };
     return (
         <React.Fragment>
             <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
@@ -41,24 +46,24 @@ export const Drone = (props) => {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <Box sx={{ margin: 1 }}>
                             {trips.map((tripRow, index) => (
-                                <Table size="small" aria-label="deliveries" style={{ backgroundColor: '#c4c4c4' }}>
+                                <Table size="small" aria-label="deliveries" style={deliveriesTableColor}>
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell style={{ fontSize: 12, fontWeight: 'bold' }}>Trip {index + 1}</TableCell>
+                                            <TableCell style={tableHeaderStyle}>Trip {index + 1}</TableCell>
                                         </TableRow>
                                         <TableRow>
-                                            <Table size="small" aria-label="trips" style={{ backgroundColor: '#f7f7f7' }}>
+                                            <Table size="small" aria-label="trips" style={tripsTableColor}>
                                                 <TableHead>
                                                     <TableRow>
-                                                        <TableCell style={{ fontSize: 12, fontWeight: 'bold', width: '50%' }}>Location</TableCell>
-                                                        <TableCell style={{ fontSize: 12, fontWeight: 'bold', width: '50%' }}>Weight</TableCell>
+                                                        <TableCell style={cellHeaderStyle}>Location</TableCell>
+                                                        <TableCell style={cellHeaderStyle}>Weight</TableCell>
                                                     </TableRow>
                                                 </TableHead>
                                                 <TableBody>
                                                     {tripRow.map((trip) => (
                                                         <TableRow key={trip}>
-                                                            <TableCell style={{ fontSize: 12, width: '50%' }}>{trip.location.name}</TableCell>
-                                                            <TableCell style={{ fontSize: 12, width: '50%' }}>{trip.location.weight}</TableCell>
+                                                            <TableCell style={cellDataStyle}>{trip.location.name}</TableCell>
+                                                            <TableCell style={cellDataStyle}>{trip.location.weight}</TableCell>
                                                         </TableRow>
                                                     ))}
                                                 </TableBody>

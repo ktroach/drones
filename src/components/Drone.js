@@ -41,7 +41,7 @@ export const Drone = (props) => {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <Box sx={{ margin: 1 }}>
                             {trips.map((tripRow, index) => (
-                                <Table size="small" aria-label="deliveries" style={{ backgroundColor: '#f3f3f3' }}>
+                                <Table size="small" aria-label="deliveries" style={{ backgroundColor: '#c4c4c4' }}>
                                     <TableHead>
                                         <TableRow>
                                             <TableCell style={{ fontSize: 12, fontWeight: 'bold' }}>Trip {index + 1}</TableCell>

@@ -7,8 +7,7 @@ export class Header extends React.Component {
   render() {
     return (
       <header className="header">
-        <MaterialLink className="title" component={RouterLink} to='/'>Home</MaterialLink>
-        <MaterialLink className="title" component={RouterLink} to='/deliveries'>Deliveries</MaterialLink>
+        <MaterialLink className="title" component={RouterLink} to='/'>Deliveries</MaterialLink>
       </header>
     );
   }

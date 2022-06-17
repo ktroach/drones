@@ -73,10 +73,11 @@ export const computeDroneSqaudDeliveries = async (drones, locations, tripLimit) 
             trips
         });
     }
+
     return deliveries;
 };
 
-const hasCapacity = (accumlatedWeight, maxWeight, locationWeight) => {
+export const hasCapacity = (accumlatedWeight, maxWeight, locationWeight) => {
     const combinedWeight = accumlatedWeight + locationWeight; 
     if (combinedWeight < maxWeight) {
         return true;

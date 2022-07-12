@@ -1,5 +1,5 @@
 {
-  "name": "welltrax-test",
+  "name": "drones",
   "engines": {
     "node": ">=4.1.1"
   },
@@ -23,6 +23,7 @@
   "scripts": {
     "b": "npm run build",
     "s": "npm run start",
+    "d": "npm run start",
     "t": "npm test -- --coverage",
     "start": "react-scripts start",
     "build": "react-scripts build",

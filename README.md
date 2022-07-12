@@ -48,10 +48,6 @@ Abbreviated Build Script:
 ```
 $ npm run b
 ```
-
-### Deployment
-The application has been deployed to Heroku for review using the Heroku CI process intergration with Github. The application can be found at: https://welltrax-drones.herokuapp.com/
-
 ### Design
 Architectually, this application was designed to use the latest React features, such as: useState, useEffect, reduce, map, and more. Modern conventions were used in the code for this project: async/await.
 

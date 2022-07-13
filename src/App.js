@@ -3,13 +3,14 @@ import {
   BrowserRouter as Router,
   useRoutes,
 } from 'react-router-dom';
-import { Header } from './components/Header';
-import { DeliveryService } from './components/DeliveryService';
+import { Home } from './components/Home';
+import { Login } from './components/Login';
 
 function AppRoutes() {
   const routes = useRoutes(
     [
-      { path: '/', element: <DeliveryService /> }
+      { path: '/', element: <Login /> }, 
+      { path: '/home', element: <Home /> }
     ]
   )
   return routes;
@@ -18,7 +19,6 @@ function AppRoutes() {
 export default App => {
   return (
     <Router>
-      <Header />
       <AppRoutes />
     </Router>
   );

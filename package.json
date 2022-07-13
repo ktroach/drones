@@ -1,5 +1,5 @@
 {
-  "name": "drones",
+  "name": "cypress-init",
   "engines": {
     "node": ">=4.1.1"
   },

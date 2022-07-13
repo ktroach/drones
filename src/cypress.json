@@ -1,0 +1,18 @@
+{
+  "env": {
+    "environment": "test",
+    "mockNetworkCalls": false
+  },
+  "userAgent": "cypress",
+  "video": true,
+  "videoUploadOnPasses": true,
+  "experimentalSessionAndOrigin": true,
+  "experimentalSessionSupport": true,
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "./test-results/cypress/cypress-tests-output-[hash].xml"
+  },
+  "viewportWidth": 1400,
+  "viewportHeight": 1200,
+  "chromeWebSecurity": false
+}
